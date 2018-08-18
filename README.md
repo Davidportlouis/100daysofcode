@@ -1,7 +1,9 @@
 # Source Code For Simple C Programs
 
 URL:https://github.com/Davidportlouis/Source-Code-For-Simple-C-Programs
+
 License: GNU GPL-3.0
+
 Author:David Port Louis
 
 Hi Fellow Coders and Learners
