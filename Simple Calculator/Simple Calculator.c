@@ -52,6 +52,7 @@ int main()
         printf("Sorry Enter The Correct Option \n");
     }
     return 0;
+    getchar();
 }
 
 /*
