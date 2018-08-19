@@ -16,7 +16,7 @@ Usage Note
 
 1. Open The Source Code Using any Text Editor or IDE of Your Choice.
 2. I Used Code::Blocks To Write these Code.
-3. Use The .exe to Run The Program Directly
+3. Use The .exe to Run The Program Directly(I Recommend Opening The Program Using cmdline for Stability ).
 4. In case of Any error in Direct Running please check the Source in text editor and retest
 
 Contributing
