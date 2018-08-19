@@ -5,6 +5,7 @@
 
 ///////////// Header Files /////////////////
 #include<stdio.h>
+#include<conio.h>
 #include<stdlib.h>
 #include<math.h> // includes the Math Header file
 
@@ -51,8 +52,7 @@ int main()
     default:
         printf("Sorry Enter The Correct Option \n");
     }
-    return 0;
-    getchar();
+    getch();
 }
 
 /*
