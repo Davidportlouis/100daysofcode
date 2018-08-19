@@ -6,8 +6,8 @@ License: GNU GPL-3.0
 
 Author:David Port Louis
 
-This Project is Opened For Project Reference and for Tutorial Purpose 
-These Codes can be found on other Tutorial Sites too, So please Check them in case of any error or Doubt
+This Project is Created For Reference and for Tutorial Purpose 
+These Codes can be found on other Tutorial Sites too, So please Check them in case of any error in these codes
 
 Usage Note
 ==========
