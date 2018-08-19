@@ -6,17 +6,15 @@ License: GNU GPL-3.0
 
 Author:David Port Louis
 
-Hi Fellow Coders and Learners
-
-David Here, I made This Series of Source Code For Simple C Programs 
-For Kids to use as reference and for learners to Make use
+This Project is Opened For Project Reference and for Tutorial Purpose 
+These Codes can be found on other Tutorial Sites too, So please Check them in case of any error or Doubt
 
 Usage Note
 ==========
 
 1. Open The Source Code Using any Text Editor or IDE of Your Choice.
 2. I Used Code::Blocks To Write these Code.
-3. Use The .exe to Run The Program Directly
+3. Use The .exe to Run The Program Directly(I Recommend Running The Program From CMDLine for Stability).
 4. In case of Any error in Direct Running please check the Source in text editor and retest
 
 Contributing
