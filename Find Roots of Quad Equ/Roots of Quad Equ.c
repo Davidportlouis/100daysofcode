@@ -33,9 +33,9 @@ int main()
 /*
 **********************************************************************************
 **********************************************************************************
-**Title:Hello World                                                             **
+**Title:Find Roots of Quadratic Equation                                        **
 **URL: https://github.com/Davidportlouis/Source-Code-For-Simple-C-Program       **
-**Date_start: 20/08/2018                                                        **
+**Last_change_date: 22/08/2018                                                  **
 **Author: David Port Louis                                                      **
 **My Special Thanks To Bucky Roberts I Learned C From his Tutorial Thanks Bucky!**
 **********************************************************************************
