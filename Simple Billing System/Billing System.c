@@ -1,4 +1,4 @@
-/*Program To Find Roots Of quadratic equation*/
+/*Simple Billing Program using Functions*/
 
 ///////////// Header Files /////////////////
 #include<stdio.h>
