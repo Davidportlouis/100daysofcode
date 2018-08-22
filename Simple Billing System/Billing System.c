@@ -49,7 +49,7 @@ void display()
 /*
 **********************************************************************************
 **********************************************************************************
-**Title:Hello World                                                             **
+**Title:Billing System                                                          **
 **URL: https://github.com/Davidportlouis/Source-Code-For-Simple-C-Program       **
 **Date_start: 20/08/2018                                                        **
 **Author: David Port Louis                                                      **
