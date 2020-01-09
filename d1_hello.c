@@ -5,8 +5,8 @@
 
 int main(void)
 {
-    char *input[100];
-    scanf("%s",input);
+    char input[100];
+    scanf("%[^\n]%*c",input);
     printf("Hello, World!\n");
     printf("%s\n",input);
     return 0;
