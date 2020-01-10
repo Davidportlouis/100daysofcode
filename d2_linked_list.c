@@ -3,13 +3,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void printList(struct node *n);
-
 struct node
 {
     int data;
-    struct Node* next;
+    struct node* next;
 };
+
+void printList(struct node *n);
 
 int main(void)
 {
@@ -23,14 +23,16 @@ int main(void)
 
     // Assign Data to Node
 
-    head->data = 1;
+    head->data = 65735;
     head->next = second;
 
-    second->data = 2;
+    second->data = head->data+1;
     second->next = third;
 
-    third->data = 3;
+    third->data = second->data+1;
     third->next = NULL;
+
+    printList(head);
 
     return 0;
 }
