@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int binsearch(int n,int *arr,int key)
+int linsearch(int n,int *arr,int key)
 {
     for(int i=0;i<n;i++)
     {
@@ -21,6 +21,6 @@ int main(void)
         scanf("%d",&arr[i]);
     }
     scanf("%d",&key);
-    printf("Key %d is found in %d location",key,binsearch(n,arr,key));
+    printf("Key %d is found in %d location",key,linsearch(n,arr,key));
     return 0;
 }
