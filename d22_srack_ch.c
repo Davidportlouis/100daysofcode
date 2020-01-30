@@ -6,7 +6,7 @@ char* getRepeatedString(char str[])
 {
     int len = strlen(str),i=0,j=0;
     int size = 2 * len;
-    char *newstr = malloc(len * sizeof(char));
+    char *newstr = malloc(1000 * sizeof(char));
     while(i<size && j <len)
     {
         newstr[i] = str[j];
