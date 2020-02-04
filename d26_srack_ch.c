@@ -8,10 +8,10 @@ int main(void)
     char ch;
     do
     {
-        scanf("%d%c",&arr[i],&ch);
+        scanf("%d%c ",&arr[i],&ch);
         i++;
     } while (ch!='\n');
-    scanf("%d",&x);
+    x = arr[i-1];
     if(x == arr[0] || x == arr[i-1])
         printf("YES");
     else
