@@ -26,13 +26,19 @@ int main(void)
         {
             if (i != r / 2 && j != c / 2)
                 printf("%d ", arr[i][j]);
-            if (i == r / 2)
-                printf("%c ", arr[r / 2][j]);
             if (j == c / 2)
             {
                  printf("%c ", arr[j][c / 2]);
             }
         }
+        if (i == r / 2)
+        {
+            for(int k=0;k<c-1;k++)
+            {
+                printf("%c ", arr[r / 2][k]);
+            }
+        }
+                
         printf("\n");
     }
 
