@@ -5,9 +5,10 @@ int getAllDigitsAsUnitDigit(int N)
 {
     int exit;
     int x = 0;
+    int unit = N % 10;
     while(N > 0)
     {
-        x++;
+        x = x * 10 + unit;
         N/=10;
     }
     return x;
