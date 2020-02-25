@@ -77,14 +77,26 @@ void insert_at_end(list *l,int val)
 
 int delete_at_end(list *l)
 {
-    node *temp = l->head;
-    while(temp!=NULL && temp->link!=NULL)
+    if(check_empty(l))
     {
-        temp=temp->link;
+        printf("List Empty");
+        return 0;
     }
-    int val = temp->data;
-    free(temp);
-    temp->link = NULL;
+    if(l->head->link == NULL)
+    {
+        int val = l->head->data;
+        free(l->head);
+        l->head = NULL;
+        return val;
+    }
+    node *temp = l->head;
+    while(temp->link->link!=NULL)
+    {
+        temp = temp->link;
+    }
+    int val = temp->link->data;
+    free(temp->link);
+    temp->link = 0;
     return val;
 }
 
@@ -93,7 +105,7 @@ int main(void)
     list *l = create_linked_list();
     insert_at_end(l,10);
     insert_at_end(l,20);
-    while(check_empty(l))
+    while(!check_empty(l))
     {
         printf("%d\n",delete_at_end(l));
     }
