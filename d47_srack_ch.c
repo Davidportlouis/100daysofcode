@@ -7,20 +7,31 @@ char* getOddEvenString(int N)
     int exit;
     int *arr = (int *)malloc(sizeof(int));
     char *charr = (char *)malloc(sizeof(char));
-    int i=0;
-    while(N!=0)
+    int i=0,j=0,ctr=N,m=0;
+    while(ctr!=0)
     {
-        arr[i] = N%10;
-        N/=10;
+        ctr/=10;
         i++;
     }
+    while (j<i)
+    {
+        arr[j] = N%10;
+        printf("%d",arr[j]);
+        N/=10;
+        j++;
+    }
+    while(m<i)
+    {
     for(int k=i-1;k>=0;k--)
     {
-        // printf("%d ",arr[k]);
-        if(arr[k]%2==0)
-            charr[k] = 'e';
-        if(arr[k]%2!=0)
-            charr[k] = 'o';
+        if(arr[k]==0)
+            charr[m] = 'e';
+        else if (arr[k]%2==0)
+            charr[m] = 'e';
+        else if (arr[k]%2!=0)
+            charr[m] = 'o';
+        m++;
+    }
     }
     return charr;
 }
