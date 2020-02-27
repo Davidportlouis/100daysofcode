@@ -7,7 +7,8 @@ char* getOddEvenString(int N)
     int exit;
     int *arr = (int *)malloc(sizeof(int));
     char *charr = (char *)malloc(sizeof(char));
-    int i=0,j=0,ctr=N,m=0;
+    int i=0,j=0,m=0;
+    long ctr=N;
     while(ctr!=0)
     {
         ctr/=10;
@@ -28,7 +29,7 @@ char* getOddEvenString(int N)
             charr[m] = 'e';
         else if (arr[k]%2==0)
             charr[m] = 'e';
-        else if (arr[k]%2!=0)
+        else if (arr[k]%2!=0 && arr[k]!=0)
             charr[m] = 'o';
         m++;
     }
