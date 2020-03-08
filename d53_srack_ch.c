@@ -30,7 +30,7 @@ int main(void)
             scanf("%d",&arr[i][j]);
         }
     }
-    while(k<n-1)
+    while(k<n-2)
     {
         for(int i=0+k;i<n-k;i++)
         {
