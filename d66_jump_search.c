@@ -1,4 +1,5 @@
 // Jump Search
+// Complexity O(sqrt(n))
 #include<stdio.h>
 #include<math.h>
 #define LIMIT 1000
