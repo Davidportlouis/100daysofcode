@@ -11,12 +11,34 @@ void rotateLeftByOne(int *arr,int n)
     arr[n-1] = temp;
 }
 
-void rotateLeft(int *arr,int d,int n)
+void rotateRightByOne(int *arr,int n)
 {
-    for(int i=0;i<d;i++)
+    int temp = arr[0];
+    for(int i=n-1;i>=0;i++)
     {
-        rotateLeftByOne(arr,n);
+        arr[i-1] = arr[i];
     }
+    arr[n-1] = temp;
+}
+
+void rotate(int *arr,int steps,int n,char l)
+{
+    if(l == 'l')
+        for(int i=0;i<steps;i++)
+        {
+            rotateLeftByOne(arr,n);
+        }
+    else if(l == 'r')
+        {
+            for(int i=0;i<steps;i++)
+            {
+                rotateRightByOne(arr,n);
+            }
+        }
+}
+
+void display(int *arr,int n)
+{
     for(int i=0;i<n;i++)
     {
         printf("%d ",arr[i]);
@@ -25,6 +47,7 @@ void rotateLeft(int *arr,int d,int n)
 
 int main(void)
 {
+    char label;
     int n,arr[LIMIT],steps;
     scanf("%d",&n);
     for(int i=0;i<n;i++)
@@ -32,6 +55,8 @@ int main(void)
         scanf("%d",&arr[i]);
     }
     scanf("%d",&steps);
-    rotateLeft(arr,steps,n);
+    scanf(" %c",&label);
+    rotate(arr,steps,n,label);
+    display(arr,n);
     return 0;
 }
