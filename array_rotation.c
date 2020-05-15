@@ -13,12 +13,12 @@ void rotateLeftByOne(int *arr,int n)
 
 void rotateRightByOne(int *arr,int n)
 {
-    int temp = arr[0];
-    for(int i=n-1;i>=0;i++)
+    int temp = arr[n-1];
+    for(int i=n-1;i>=0;i--)
     {
-        arr[i-1] = arr[i];
+        arr[i] = arr[i-1];
     }
-    arr[n-1] = temp;
+    arr[0] = temp;
 }
 
 void rotate(int *arr,int steps,int n,char l)
@@ -29,12 +29,10 @@ void rotate(int *arr,int steps,int n,char l)
             rotateLeftByOne(arr,n);
         }
     else if(l == 'r')
-        {
             for(int i=0;i<steps;i++)
             {
                 rotateRightByOne(arr,n);
             }
-        }
 }
 
 void display(int *arr,int n)
