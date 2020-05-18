@@ -31,7 +31,7 @@ void rotate(int *arr,int steps,int n,char l)
     else if(l == 'r')
             for(int i=0;i<steps;i++)
             {
-                rotateRightByOne(arr,n);
+                rotateRightByOne(arr,n);5
             }
 }
 
