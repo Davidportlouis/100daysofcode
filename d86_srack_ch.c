@@ -3,9 +3,8 @@
 
 int main(void)
 {
-    double a,area;
+    double a;
     scanf("%lf",&a);
-    area = (sqrt(3.0)/4.0)*pow(a,2);
-    printf("%.2f",area);
+    printf("%.2lf",sqrt(3)*a*a);
     return 0;
 }
