@@ -1,28 +1,30 @@
 #include<stdio.h>
 
-static int char_map[122];
-
-void word_count(char *s)
-{
-    int i=0;
-    while(s[i] != '\0')
-    {
-        char_map[(int)s[i]] += 1;
-        i++;
-    }
-}
-
 int main(void)
 {
-    int i = 0;
     char s[1000];
-    fgets(s,1000,stdin);
-    word_count(s);
-    while(s[i] != '\0')
+    int n;
+    scanf("%s%n",s,&n);
+    if(n %2 != 0)
     {
-        if(char_map[(int)s[i]] == 1 && s[i] != '\n')
-            printf("%c ",s[i]);
-        i++;
+        for(int i=0;i<n;i++)
+        {
+            if(i == n/2){
+                printf("*");
+                continue;
+            }
+            printf("%c",s[i]);
+        }
+    }else
+    {
+        for(int i=0;i<n;i++)
+        {
+            if((i == n/2) || (i == (n/2)-1)){
+                printf("*");
+                continue;
+            }
+            printf("%c",s[i]);
+        }
     }
     return 0;
 }
