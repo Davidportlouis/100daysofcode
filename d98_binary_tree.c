@@ -6,6 +6,7 @@
 struct tree_node
 {
     int data;
+    int node_id;
     struct tree_node *lchild;
     struct tree_node *rchild;
 };
@@ -33,10 +34,11 @@ tree* init_tree()
     return t;
 }
 
-void insert(tree *t,int val)
+void insert(tree *t,int val,int node_id)
 {
     tree_node *tn = (tree_node*)malloc(sizeof(tree_node));
     tn->data = val;
+    tn->node_id = node_id;
     tn->lchild = tn->rchild = NULL;
     if(is_tree_empty(t))
     {
@@ -47,7 +49,7 @@ void insert(tree *t,int val)
     tree_node *root = t->root;
     while(1)
     {
-        if(val > root->data)
+        if(node_id > root->node_id)
         {
             if(root->rchild == NULL)
             {
@@ -56,7 +58,7 @@ void insert(tree *t,int val)
                 break;
             }else
                 root =  root->rchild;
-        }else if(val < root->data)
+        }else if(node_id < root->node_id)
         {
             if(root->lchild == NULL)
             {
@@ -94,17 +96,30 @@ void traverse_tree(tree_node *root, char s)
         printf("Invalid Traversal Schema");
 }
 
+// Search
+int search(tree_node *root,int node_id)
+{
+    if(node_id == root->node_id)
+        return root->data;
+    else if(node_id < root->node_id)
+        return search(root->lchild,node_id);
+    else if(node_id > root->node_id)
+        return search(root->rchild,node_id);
+    return 0;
+}
+
 int main(void)
 {
     tree *t = init_tree();
-    insert(t,8);
-    insert(t,2);
-    insert(t,10);
-    insert(t,1);
-    insert(t,9);
-    insert(t,3);
-    insert(t,11);
-    insert(t,4);
+    insert(t,80,8);
+    insert(t,20,10);
+    insert(t,10,2);
+    insert(t,10,1);
+    insert(t,90,5);
+    insert(t,30,4);
+    insert(t,11,6);
+    insert(t,40,3);
     traverse_tree(t->root,'f');
+    printf("\n%d",search(t->root,4));
     return 0;
 }
