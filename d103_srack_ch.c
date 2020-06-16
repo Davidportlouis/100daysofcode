@@ -37,19 +37,17 @@ int main(void)
     extract_digit(x,n);
     for(int i=0;i<n;i++)
     {
-        printf("%d ",cpy_digits[i]);
-    }
-    printf("\n");
-    rotate_clockwise(n);
-    for(int i=0;i<n;i++)
-    {
-        printf("%d ",cpy_digits[i]);
-    }
-    printf("\n");
-    rotate_clockwise(n);
-    for(int i=0;i<n;i++)
-    {
-        printf("%d ",cpy_digits[i]);
+        for(int j=0;j<n;j++)
+        {
+            for(int k=0;k<cpy_digits[j];k++)
+            {
+                printf("%d",digits[j]);
+            }
+            if(j != n-1)
+                printf("-");
+        }
+        rotate_clockwise(n);
+        printf("\n");
     }
     return 0;
 }
