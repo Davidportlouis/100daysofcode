@@ -1,8 +1,6 @@
 #include<stdio.h>
-#include<math.h>
 
-
-static double mu=2.4,sigma=2.0,n=100;
+static double mu=500.0,sigma=80.0,n=100,z=1.96;
 
 double sqroot(double x)
 {
@@ -15,15 +13,11 @@ double sqroot(double x)
     return ans;
 }
 
-double phi(double x)
-{
-    return 0.5 * (1 + erf((x-mu)/(sigma * sqroot(2))));
-}
 
 int main(void)
 {
-    mu = n * mu;
-    sigma = sqroot(n) * sigma;
-    printf("%0.4lf\n",phi(250));
+    double error = z*sigma/sqroot(n);
+    printf("%0.2lf\n",mu-error);
+    printf("%0.2lf\n",mu+error);
     return 0;
 }
