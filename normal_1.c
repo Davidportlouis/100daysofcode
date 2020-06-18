@@ -5,25 +5,6 @@
 
 static double mu = 20.0,sigma = 2.0;
 
-
-double power(double base,double exp)
-{
-    double ans = 1;
-    if(exp > 0)
-    {
-        for(int i=0;i<exp;i++)
-        {
-            ans *= base;
-        }
-    }else{
-        for(int i=0;i>exp;i--)
-        {
-            ans /= base;
-        }
-    }
-    return ans;
-}
-
 double sqroot(int x)
 {
     double temp,ans;
@@ -47,7 +28,7 @@ int main(void)
     double dis_1,dis_2;
     dis_1 = phi(19.5);
     dis_2 = phi(22.0) - phi(20.0);
-    printf("%0.3lf\n",dis_1);
-    printf("%0.3lf\n",dis_2);
+    printf("%0.2lf\n",dis_1);
+    printf("%0.2lf\n",dis_2);
     return 0;
 }
