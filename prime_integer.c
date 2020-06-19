@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<math.h>
 #include<stdbool.h>
-#define MAX 20000
+#define MAX 200000
 
 bool isPrime(int x)
 {
