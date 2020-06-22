@@ -1,69 +1,101 @@
+// Dynamic stack using linked list
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdbool.h>
 
-//creating  stack node
-struct node 
+typedef struct stack_node
 {
     int data;
-    struct node* link;
-};
+    struct stack_node *link;
+} stack_node;
 
-typedef struct node node;
-
-//creating top of stack 
-struct stack
+typedef struct stack
 {
-    node *top;
+    stack_node *tos;
     int size;
-};
+} stack;
 
-typedef struct stack stack;
-
-stack* create_stack()
-{
-    stack* s = (stack *)malloc(sizeof(stack));
-    s->top = NULL;
-    s->size = 0;
-    return s;
-}
-
-bool is_empty(stack *s)
+bool check_empty(stack *s)
 {
     return s->size == 0;
 }
 
-stack* push(stack *s,int val)
+// initialize stack data structure
+stack* create_stack()
 {
-    node* n = (node *)malloc(sizeof(node));
-    n->data = val;
-    n->link = s->top;
-    s->top = n;
-    s->size++;
+    stack *s = (stack*)malloc(sizeof(stack));
+    s->tos = NULL;
+    s->size = 0;
     return s;
 }
 
-int pop(stack* s)
+// primitive to push elements
+void push(stack *s,int val)
 {
-    int val = s->top->data;
-    node *temp = s->top;
-    s->top = s->top->link;
+    stack_node *sn = (stack_node*)malloc(sizeof(stack_node));
+    sn->data = val;
+    sn->link = s->tos;
+    s->tos = sn;
+    s->size++;
+}
+
+// primitive to pop elements
+int pop(stack *s)
+{
+    int val = s->tos->data;
+    stack_node *temp = s->tos;
+    s->tos = s->tos->link;
+    free(temp);
     s->size--;
     return val;
 }
 
+// primitive to search
+int search(stack *s,int key)
+{
+    int node=0,n=s->size;
+    while(n != 0)
+    {
+        if(s->tos->data == key)
+            return s->size-node;
+        s->tos = s->tos->link;
+        node++;
+        n--;
+    }
+    return -1;
+}
+
+// primitive to reverse dyn stack
+void reverse(stack *s)
+{
+    int *temp = (int*)malloc(s->size*sizeof(int)),i=0;
+    while(!check_empty(s))
+    {
+        temp[i] = pop(s);
+        i++;
+    }
+    for(int j=0;j<i;j++)
+    {
+        push(s,temp[j]);
+    }
+}
+
+// driver code
 int main(void)
 {
-    stack *s = create_stack();
-    push(s,15);
+    stack *s = create_stack(); // initializing stack
+    // pushing elements into created stack
     push(s,10);
-    push(s,5);
+    push(s,20);
     push(s,30);
-    push(s,45);
-    push(s,75);
-    while(!is_empty(s))
+    // searching stack for element
+    printf("%d is located at %d\n",10,search(s,10));
+    // reversing stack
+    reverse(s); // turns stack into queue
+    while(!check_empty(s))
     {
-        printf("%d\n",pop(s));
+        printf("%d ",pop(s));
     }
+    printf("\n");
     return 0;
 }
