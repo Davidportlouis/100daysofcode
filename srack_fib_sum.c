@@ -1,37 +1,28 @@
 #include<stdio.h>
-#include <stdlib.h>
-#define MAX 1000000000
 
-int fib(int x)
+void get_expiry(int month,int year,int expiry)
 {
-    if(x < 2)
-        return 1;
-    return fib(x-1) + fib(x-2);
+    for(int i=0;i<=expiry;i++)
+    {
+        if(month > 12)
+        {
+            month = 01;
+            year++;
+        }else{
+            month++;
+        }
+    }
+    if(month < 10)
+        printf("0%d-%d\n",month,year);
+    else
+        printf("%d-%d\n",month,year);
 }
 
-int check_fib(int x)
+int main(void)
 {
-    for(int i=0;i<x+1;i++)
-    {
-        if(fib(i) == x)
-            return 1;
-    }
-    return 0;
-}
-
-int main()
-{
-    int n,arr[100],sum=0;
-    scanf("%d",&n);
-    for(int i=0;i<n;i++)
-    {
-        scanf("%d",&arr[i]);
-    }
-    for(int i=0;i<n;i++)
-    {
-        if(check_fib(arr[i]) == 1)
-            sum += arr[i];
-    }
-    (sum != 0)?printf("%d",sum):printf("-1");
+    int month,year,expiry;
+    scanf("%d-%d",&month,&year);
+    scanf("%d",&expiry);
+    get_expiry(month,year,expiry);
     return 0;
 }

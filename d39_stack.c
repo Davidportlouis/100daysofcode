@@ -89,7 +89,7 @@ int main(void)
     push(s,20);
     push(s,30);
     // searching stack for element
-    // printf("%d is located at %d\n",10,search(s,10));
+    printf("%d is located at %d\n",10,search(s,10));
     // reversing stack
     reverse(s); // turns stack into queue
     while(!check_empty(s))
