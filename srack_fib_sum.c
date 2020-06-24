@@ -1,28 +1,35 @@
 #include<stdio.h>
+#include<inttypes.h>
+#include<math.h>
 
-void get_expiry(int month,int year,int expiry)
+int check_perfect_sqr(uint64_t x)
 {
-    for(int i=0;i<=expiry;i++)
-    {
-        if(month > 12)
-        {
-            month = 01;
-            year++;
-        }else{
-            month++;
-        }
-    }
-    if(month < 10)
-        printf("0%d-%d\n",month,year);
-    else
-        printf("%d-%d\n",month,year);
+    uint64_t rt = sqrt(x);
+    return (rt*rt == x);
+}
+
+int check_is_fib(uint64_t x)
+{
+    return check_perfect_sqr(5*x*x+4) || check_perfect_sqr(5*x*x-4);
 }
 
 int main(void)
 {
-    int month,year,expiry;
-    scanf("%d-%d",&month,&year);
-    scanf("%d",&expiry);
-    get_expiry(month,year,expiry);
+    int n,ct=0;
+    uint64_t arr[100],sum=0;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%" SCNu64,&arr[i]);
+    }
+    for(int i=0;i<n;i++)
+    {
+        if(check_is_fib(arr[i]))
+        {
+            sum += arr[i];
+            ct++;
+        }
+    }
+    (ct != 0)?printf("%"PRIu64,sum) : printf("-1");
     return 0;
 }
