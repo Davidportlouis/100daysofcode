@@ -16,6 +16,7 @@ int get_int(char *arr,int l)
     sscanf(digits,"%d",&sum);
     if(sum % 2 == 0)
         g += (i-1);
+    
     return sum;
 }
 
