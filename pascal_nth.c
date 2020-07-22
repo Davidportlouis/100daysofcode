@@ -3,7 +3,8 @@
 
 int main(void)
 {
-    int r,c=1,i,j;
+    int r,i,j;
+    unsigned long c=1;
     scanf("%d",&r);
     for(i=0;i<r;i++)
     {
@@ -14,7 +15,7 @@ int main(void)
             else 
                 c = c * (i-j+1)/j;
             if(i == r-1)
-                printf("%d ",c);
+                printf("%lu ",c);
         }
     }
     return 0;
