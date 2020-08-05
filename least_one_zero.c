@@ -1,3 +1,4 @@
+// integer with atleast one zero
 #include<stdio.h>
 
 int check_zeros(int x)
