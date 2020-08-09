@@ -31,7 +31,7 @@ int main(void)
     k = y;
     for(i=0;i<x+y;i++)
     {
-        if(j<x && j!=0)
+        if(j<x)
             printf("%c",vow[j++]);
         if(k>=0 && k!=0)
             printf("%c",con[--k]);
